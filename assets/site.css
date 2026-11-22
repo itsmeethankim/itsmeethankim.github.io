@@ -1,0 +1,29 @@
+:root { --ink: #050a1c; --panel: #0b1430; --text: #eef4ff; --muted: #a9b9df; --gold: #f2c66b; --brain: #ff5577; --line: rgba(170,205,255,.18); }
+* { box-sizing: border-box; }
+html { background: var(--ink); }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #1d5d75 0%, #123a5c 38%, #0b1d40 70%, var(--ink) 100%) fixed;
+  display: grid; place-items: center; padding: 32px 16px;
+}
+main { width: 100%; max-width: 440px; text-align: center; }
+.hero { display: block; width: 168px; height: auto; margin: 0 auto 14px; image-rendering: pixelated; filter: drop-shadow(0 0 28px rgba(255,85,119,.45)); animation: bob 4s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .hero { animation: none; } }
+h1 { font: 800 40px/1.1 ui-monospace, Menlo, monospace; letter-spacing: .1em; margin: 0 0 6px; color: #ffe3ea; text-shadow: 3px 3px 0 #a8183f; }
+.tag { color: var(--muted); letter-spacing: .3em; font-size: 12px; margin-bottom: 26px; }
+.card { background: rgba(11,20,48,.88); border: 1px solid var(--line); padding: 22px 20px; box-shadow: 0 0 0 4px rgba(5,10,28,.5); }
+.card p { margin: 0 0 8px; }
+.lead { font-size: 18px; font-weight: 600; }
+.code { font: 700 32px/1.2 ui-monospace, Menlo, monospace; letter-spacing: .2em; color: var(--gold); margin: 12px 0; }
+.muted { color: var(--muted); font-size: 14px; }
+.actions { display: grid; gap: 10px; margin-top: 18px; }
+.btn { display: block; padding: 13px 18px; font-weight: 700; letter-spacing: .08em; text-decoration: none; border: 2px solid var(--gold); color: var(--gold); }
+.btn.store { background: #fff; border-color: #fff; color: #000; letter-spacing: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn.store small { display: block; font-size: 11px; font-weight: 500; line-height: 1.1; text-align: left; }
+.btn.store b { display: block; font-size: 19px; line-height: 1.1; text-align: left; }
+.btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.preview { display: block; width: 100%; height: auto; margin-top: 22px; border: 1px solid var(--line); image-rendering: pixelated; }
+footer { margin-top: 22px; font-size: 13px; }
+footer a { color: var(--muted); }

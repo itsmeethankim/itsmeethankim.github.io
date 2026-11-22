@@ -3,44 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brillion</title>
-<meta name="description" content="Brillion, the daily trivia dive.">
-<style>
-  :root { --ink: #050a1c; --panel: #0b1430; --text: #eef4ff; --muted: #a9b9df; --gold: #f2c66b; --brain: #ff5577; }
-  * { box-sizing: border-box; }
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--ink); color: var(--text); font: 16px/1.6 system-ui, -apple-system, sans-serif; padding: 24px 16px; }
-  main { width: 100%; max-width: 420px; text-align: center; }
-  h1 { font-size: 40px; letter-spacing: .08em; margin: 0 0 4px; color: #ffe3ea; text-shadow: 3px 3px 0 #a8183f; }
-  .tag { color: var(--muted); letter-spacing: .3em; font-size: 12px; margin-bottom: 28px; }
-  .card { background: var(--panel); border: 1px solid rgba(170,205,255,.18); padding: 20px; }
-  .code { font: 700 32px/1.2 ui-monospace, Menlo, monospace; letter-spacing: .2em; color: var(--gold); margin: 10px 0; }
-  .muted { color: var(--muted); font-size: 14px; }
-  a.btn { display: inline-block; margin-top: 14px; padding: 12px 18px; border: 2px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: 700; letter-spacing: .1em; }
-</style>
+<title>You&#x27;ve been challenged on Brillion</title>
+<meta name="description" content="A friend sent you a Brillion duel. Six trivia prompts: name the answer nobody else thinks of.">
+<meta name="theme-color" content="#0b1d40">
+<meta name="apple-itunes-app" content="app-id=6837643620">
+<meta property="og:site_name" content="Brillion">
+<meta property="og:type" content="website">
+<meta property="og:title" content="You&#x27;ve been challenged on Brillion">
+<meta property="og:description" content="A friend sent you a Brillion duel. Six trivia prompts: name the answer nobody else thinks of.">
+<meta property="og:image" content="https://itsmeethankim.github.io/img/og-link.png">
+<meta property="og:image:secure_url" content="https://itsmeethankim.github.io/img/og-link.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A pink pixel-art brain over a dark-blue ocean, with the word Brillion">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You&#x27;ve been challenged on Brillion">
+<meta name="twitter:description" content="A friend sent you a Brillion duel. Six trivia prompts: name the answer nobody else thinks of.">
+<meta name="twitter:image" content="https://itsmeethankim.github.io/img/og-link.png">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <main>
+  <img class="hero" src="/img/brain.png" width="256" height="224" alt="">
   <h1>BRILLION</h1>
   <div class="tag">DAILY TRIVIA DIVE</div>
   <div class="card" id="card">
-    <p>Six prompts a day. Name the answer nobody else thinks of.</p>
+    <p class="lead">Six prompts a day. Name the answer nobody else thinks of.</p>
   </div>
-  <p class="muted" style="margin-top:22px"><a href="/brillion-legal/privacy.html" style="color:var(--muted)">Privacy policy</a></p>
+  <div class="actions">
+    <a class="btn store" href="https://apps.apple.com/app/id6837643620"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.6 3.7L12 11.7 5.4 8 12 4.3ZM5 9.7l6 3.4v6.6l-6-3.4V9.7Zm8 10v-6.6l6-3.4v6.6l-6 3.4Z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+  </div>
+  <img class="preview" src="/img/og-link.png" width="1200" height="630" alt="">
+  <footer><a href="/brillion-legal/privacy.html">Privacy policy</a></footer>
 </main>
-<script>
-  // /d/CODE (duel) or /f/CODE (friend invite): the app opens these directly when installed.
-  var m = location.pathname.match(/^\/(d|f)\/([A-Za-z0-9]{6,8})\/?$/);
-  if (m) {
-    var duel = m[1] === 'd', code = m[2].toUpperCase();
-    var card = document.getElementById('card');
-    card.innerHTML = '';
-    var p1 = document.createElement('p'); p1.textContent = duel ? 'A friend challenged you to a duel.' : 'A friend wants to dive with you.';
-    var c = document.createElement('div'); c.className = 'code'; c.textContent = code;
-    var p2 = document.createElement('p'); p2.className = 'muted';
-    p2.textContent = duel ? 'Open Brillion, go to Duels, and enter this code.' : 'Open Brillion, go to Friends, and add this code.';
-    var a = document.createElement('a'); a.className = 'btn'; a.href = 'brillion://' + m[1] + '/' + code; a.textContent = 'OPEN IN BRILLION';
-    card.append(p1, c, p2, a);
-  }
-</script>
+<script src="/assets/link.js"></script>
 </body>
 </html>
