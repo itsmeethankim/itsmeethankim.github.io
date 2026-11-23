@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["FCJA29W7ZU.app.brillion.game"],
+        "appIDs": ["SWSLLGC9HB.app.brillion.ios", "FCJA29W7ZU.app.brillion.game"],
         "components": [
           { "/": "/d/*", "comment": "Duel links" },
           { "/": "/f/*", "comment": "Friend invites" }
