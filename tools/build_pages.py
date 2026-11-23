@@ -6,7 +6,7 @@ Change BASE when the site moves to a custom domain (og:image must be an absolute
 import html
 
 BASE = "https://itsmeethankim.github.io"
-APP_ID = "6837643620"
+APP_ID = "6838256868"
 STORE = f"https://apps.apple.com/app/id{APP_ID}"
 
 PAGES = {
